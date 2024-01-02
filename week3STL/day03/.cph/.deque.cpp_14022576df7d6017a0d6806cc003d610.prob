@@ -1,0 +1,1 @@
+{"name":"Local: deque","url":"d:\\AlgoZenith\\week3STL\\day03\\deque.cpp","tests":[{"id":1703775903302,"input":"1\n8\ninsertback 3\ninsertback 5\ninsertfront 2\nprintback\nprint 1\neraseback\ninsertfront 1\nprintfront","output":"5\n3\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\AlgoZenith\\week3STL\\day03\\deque.cpp","group":"local","local":true}

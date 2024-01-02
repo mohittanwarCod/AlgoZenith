@@ -1,0 +1,1 @@
+{"name":"Local: validParenthesis","url":"d:\\AlgoZenith\\week3STL\\day04\\minimal\\validParenthesis.cpp","tests":[{"id":1703857417636,"input":"3\n(())))\n()()(()\n))((","output":"2\n1\n4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\AlgoZenith\\week3STL\\day04\\minimal\\validParenthesis.cpp","group":"local","local":true}
