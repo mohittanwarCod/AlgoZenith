@@ -1,44 +1,47 @@
+// Enter your code below
 #include <bits/stdc++.h>
 using namespace std;
-void solve(){
-    int a,b,c,p;
-    cin>>a>>b>>c>>p;
-    
-    if(a==0 && b!=0){
-        cout<<0<<endl;
-        return;
+typedef long long int ll;
+ll expo(ll a, ll x, ll p)  //(a^x)%p
+{
+  ll n, ans = 1;
+  // prod= (a^(2^p1))
+  while (x) {
+    if (x % 2) {
+      ans = ((ans % p) * (a % p)) % p;
     }
+    a = ((a % p) * (a % p)) % p;
+    x = x / 2;
+  }
+  return ans;
+}
+void solve() {
+  // write your code here
+  ll n, res, ans, a, b, c, p;
+  cin >> a >> b >> c >> p;
+  if (b == 0 && c != 0) {
+    cout << '1' << '\n';
+  }
 
-    int b_pow_ans = pow(b,c);
-    if(a%p==0 && b_pow_ans!=0){
-        cout<<0<<endl;
-        return;
-    }
+  else if (a % p == 0 || a == 0) {
+    cout << "0\n";
+  } else {
+    res = expo(b, c, p - 1);
+    ans = expo(a, res, p);
+    cout << ans << endl;
+  }
+}
 
-    if(a%p!=0 && b_pow_ans!=0){
-           b_pow_ans = b_pow_ans%(p-1);
-           int a_pow = b_pow_ans%(p-1);
-           int a_pow_ans = pow(a,a_pow);
-           a_pow_ans = a_pow_ans %p;
-           cout<<a_pow_ans<<endl;
-           return;
+int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  int i, T;
 
-    }
- 
-   cout<<1<<endl;
-    
-   
+  T = 1;
+  cin >> T;
 
-  
-   
-    
-   
-    
-
-};
-signed main(){
-      ios_base::sync_with_stdio(0);
-      cin.tie(0);cout.tie(0);
-      int _t; cin>>_t;while(_t--)
-      solve();
+  for (i = 1; i <= T; i++) {
+    solve();
+  }
+  return 0;
 }
